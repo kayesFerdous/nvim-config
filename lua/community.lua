@@ -9,6 +9,7 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.typescript"},
   { import = "astrocommunity.pack.cpp"},
+  { import = "astrocommunity.pack.tailwindcss"},
   { import = "astrocommunity.colorscheme.github-nvim-theme"},
 
   -- import/override with your plugins folder
