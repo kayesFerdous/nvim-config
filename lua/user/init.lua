@@ -1,0 +1,15 @@
+-- ---@type ChadrcConfig
+-- local M = {}
+--
+-- M.ui = {
+--   theme = "default_theme", -- replace with your actual theme if not default
+--   hl_override = {
+--     Normal = { bg = "none" },
+--     NormalNC = { bg = "none" },
+--     NormalFloat = { bg = "none" },
+--     FloatBorder = { bg = "none" },
+--     Pmenu = { bg = "none" },
+--   },
+-- }
+--
+-- return M
