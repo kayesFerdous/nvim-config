@@ -7,8 +7,30 @@ return {
   "andweeb/presence.nvim",
   {
     "ray-x/lsp_signature.nvim",
-    event = "BufRead",
-    config = function() require("lspsignature").setup() end,
+    event = "VeryLazy",
+    opts = {
+      hint_enable = true,
+      hint_prefix = "󰛩 ",
+      hint_scheme = "String",
+      hi_parameter = "LspSignatureActiveParameter",
+    },
+    config = function(_, opts) require("lsp_signature").setup(opts) end,
+  },
+
+  -- == Add Venv-Selector Here ==
+  {
+    "linux-cultist/venv-selector.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" }, -- Already in AstroNvim
+    event = "VeryLazy", -- Recommended lazy-loading trigger
+    opts = {
+      name = { "venv", ".venv", ".env" },
+      parents = 3, -- Search more parent directories
+      search_venv_managers = true, -- Detect Poetry/Pipenv/Conda
+      dap_enabled = true, -- Auto-configure debugpy
+    },
+    keys = {
+      { "<leader>pv", "<cmd>VenvSelect<cr>", desc = "Python: Select VirtualEnv" },
+    },
   },
   -- == Examples of Overriding Plugins ==
   -- customize alpha options
@@ -73,4 +95,14 @@ return {
       )
     end,
   },
+  -- example lazy.nvim install setup
+  "slugbyte/lackluster.nvim",
+  lazy = false,
+  priority = 1000,
+  init = function()
+    -- vim.cmd.colorscheme "lackluster"
+    -- vim.cmd.colorscheme("lackluster-hack") -- my favorite
+    -- vim.cmd.colorscheme "lackluster-min"
+    vim.cmd.colorscheme "lackluster-night"
+  end,
 }
