@@ -37,7 +37,7 @@ hi("Repeat", { fg = c.red })
 hi("Operator", { fg = c.cyan })
 hi("PreProc", { fg = c.orange })
 hi("Type", { fg = c.aqua })
-hi("Constant", { fg = c.cyan })
+hi("Constant", { fg = c.blue })
 hi("Special", { fg = c.yellow })
 
 -- LSP / Diagnostics (if needed)
@@ -55,17 +55,22 @@ hi("Pmenu", { fg = c.fg, bg = c.dark_gray })
 hi("PmenuSel", { fg = c.bg, bg = c.blue })
 
 -- Treesitter (if enabled)
+hi("@keyword.type", { fg = c.red }) -- or any color you prefer
 hi("@function", { fg = c.blue })
 hi("@variable.parameter", { fg = c.fg })
 hi("@variable.member", { fg = c.fg })
--- hi("@parameter", { fg = c.fg })
-hi("@keyword", { fg = c.red })
-hi("@keyword.import", { fg = c.blue }) -- or any color you like
+hi("@keyword.import", { fg = c.red }) -- or any color you like
 hi("@string", { fg = c.green })
+hi("@constant", { fg = c.fg })
+hi("@module", { fg = c.fg })
+hi("@attribute", { fg = c.fg })
 hi("@type", { fg = c.blue })
 hi("@property", { fg = c.yellow })
 hi("@punctuation", { fg = c.fg })
 hi("@variable.builtin", { fg = c.fg }) -- or any color you want
+
+-- place the cursor on something and it can capture the know what treesitter group is used
+-- :lua print(vim.inspect(vim.treesitter.get_captures_at_cursor(0)))
 
 -- Notify plugin (if used)
 hi("NotifyBackground", { bg = c.bg })
