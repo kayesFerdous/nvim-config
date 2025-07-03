@@ -45,3 +45,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
   pattern = "*",
   callback = set_transparency,
 })
+
+require("notify").setup({
+  background_colour = "#000000",
+})
