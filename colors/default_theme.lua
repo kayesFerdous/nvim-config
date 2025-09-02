@@ -50,7 +50,7 @@ hi("DiagnosticHint", { fg = c.green })
 hi("LineNr", { fg = c.comment })
 hi("CursorLineNr", { fg = c.yellow })
 hi("VertSplit", { fg = c.blue })
-hi("StatusLine", { fg = c.fg, bg = c.dark_gray })
+hi("StatusLine", { fg = c.fg, bg = "NONE" })
 hi("Pmenu", { fg = c.fg, bg = c.dark_gray })
 hi("PmenuSel", { fg = c.bg, bg = c.blue })
 

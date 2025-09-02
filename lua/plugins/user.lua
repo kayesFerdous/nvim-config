@@ -18,20 +18,20 @@ return {
   },
 
   -- == Add Venv-Selector Here ==
-  {
-    "linux-cultist/venv-selector.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" }, -- Already in AstroNvim
-    event = "VeryLazy", -- Recommended lazy-loading trigger
-    opts = {
-      name = { "venv", ".venv", ".env" },
-      parents = 3, -- Search more parent directories
-      search_venv_managers = true, -- Detect Poetry/Pipenv/Conda
-      dap_enabled = true, -- Auto-configure debugpy
-    },
-    keys = {
-      { "<leader>pv", "<cmd>VenvSelect<cr>", desc = "Python: Select VirtualEnv" },
-    },
-  },
+  -- {
+  --   "linux-cultist/venv-selector.nvim",
+  --   dependencies = { "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" }, -- Already in AstroNvim
+  --   event = "VeryLazy", -- Recommended lazy-loading trigger
+  --   opts = {
+  --     name = { "venv", ".venv", ".env" },
+  --     parents = 3, -- Search more parent directories
+  --     search_venv_managers = true, -- Detect Poetry/Pipenv/Conda
+  --     dap_enabled = true, -- Auto-configure debugpy
+  --   },
+  --   keys = {
+  --     { "<leader>pv", "<cmd>VenvSelect<cr>", desc = "Python: Select VirtualEnv" },
+  --   },
+  -- },
   -- == Examples of Overriding Plugins ==
   -- customize alpha options
   {

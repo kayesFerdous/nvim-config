@@ -10,7 +10,7 @@ return {
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.tailwindcss" },
-  { import = "astrocommunity.colorscheme.github-nvim-theme" },
+  -- { import = "astrocommunity.colorscheme.github-nvim-theme" },
 
   -- import/override with your plugins folder
 }
