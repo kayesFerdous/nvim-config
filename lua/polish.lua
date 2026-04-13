@@ -49,3 +49,9 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 require("notify").setup {
   background_colour = "#000000",
 }
+
+-- Work around a Neovim 0.12 + treesitter markdown injection crash
+-- (node:range() nil inside conceal/injection directive handling).
+pcall(function()
+  vim.treesitter.query.set("markdown", "injections", "")
+end)
