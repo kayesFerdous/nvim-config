@@ -1,11 +1,25 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- Customize None-ls sources
 
 ---@type LazySpec
 return {
   "nvimtools/none-ls.nvim",
   opts = function(_, opts)
+    local user_on_init = opts.on_init
+
+    -- Guard null-ls supports_method during startup races (e.g. vim-illuminate CursorMoved).
+    opts.on_init = function(client, ...)
+      local original_supports_method = client.supports_method
+      if type(original_supports_method) == "function" then
+        client.supports_method = function(first, second, ...)
+          local ok, supported = pcall(original_supports_method, first, second, ...)
+          if not ok then return false end
+          return supported
+        end
+      end
+
+      if type(user_on_init) == "function" then user_on_init(client, ...) end
+    end
+
     -- opts variable is the default configuration table for the setup function call
     -- local null_ls = require "null-ls"
 
